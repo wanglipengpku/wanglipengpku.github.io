@@ -1,598 +1,446 @@
-<!doctype html>
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x738b;&#x5229;&#x670b;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
-.mac-os-11 { --title-bar-height:28px; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-.typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) {
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li blockquote { margin: 1rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  .typora-export #write { break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-  .is-mac table { break-inside: avoid; }
-  .typora-export-show-outline .typora-export-sidebar { display: none; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-.MathJax_ref { fill: currentcolor; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) {
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-.md-expand mark .md-meta { opacity: 0.3 !important; }
-mark .md-meta { color: rgb(0, 0, 0); }
-@media print {
-  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
-}
-.md-diagram-panel .messageText { stroke: none !important; }
-.md-diagram-panel .start-state { fill: var(--node-fill); }
-.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
-.md-fences.md-fences-math { font-size: 1em; }
-.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background: inherit; }
-.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
-.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
-.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
-.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) {
-  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
-}
-@media screen and (max-width: 800px) {
-  .typora-export-sidebar { display: none; }
-}
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
-.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
-.outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
-.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
-.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
-.outline-expander:hover::before { content: ""; }
-.outline-h1 > .outline-item { padding-left: 0px; }
-.outline-h2 > .outline-item { padding-left: 1em; }
-.outline-h3 > .outline-item { padding-left: 2em; }
-.outline-h4 > .outline-item { padding-left: 3em; }
-.outline-h5 > .outline-item { padding-left: 4em; }
-.outline-h6 > .outline-item { padding-left: 5em; }
-.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
-.outline-label:hover { text-decoration: underline; }
-.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
-.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
-.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
-.outline-children { display: none; }
-.info-panel-tab-wrapper { display: none; }
-.outline-item-open > .outline-children { display: block; }
-.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
-.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
-.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
-.typora-export-collapse-outline .outline-children { display: none; }
-.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
-.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
-.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
-.md-inline-math-container mjx-container { zoom: 0.95; }
-
-
-:root {
-    --side-bar-bg-color: #fafafa;
-    --control-text-color: #777;
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
 }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-/* open-sans-regular - latin-ext_latin */
-  /* open-sans-italic - latin-ext_latin */
-    /* open-sans-700 - latin-ext_latin */
-    /* open-sans-700italic - latin-ext_latin */
-  html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
 }
 
-body {
-    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
 }
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <div style="float:right">
+    <img src="file:///d:\git-doc\myblockchain-study\markdown\简历\wanglipeng.jpg" height="180">
+</div>
+<h3 id="王利朋">王利朋</h3>
+<ul>
+<li>博雅正链科技有限公司  研究员</li>
+<li>河南省数据安全与可信计算工程技术研究中心  研究员</li>
+<li>办公地址: 河南省郑州市惠济区英才街16号;</li>
+<li>研究方向: 区块链、密码学、分布式存储。</li>
+<li>Email: wlpscu AT <a href="http://126.com">126.com</a></li>
+</ul>
+<hr>
+<h3 id="教育背景">教育背景</h3>
+<ul>
+<li>2005.9 – 2009.6 四川大学软件学院   软件工程   本科</li>
+<li>2009.9 – 2012.6 四川大学计算机学院   软件工程    研究生(保送)</li>
+<li>2019.9 – 2023.6  北京大学计算机学院   计算机软件与理论   博士</li>
+</ul>
+<hr>
+<h3 id="工作经历">工作经历</h3>
+<ul>
+<li>
+<p>2012年7月–2013年1月
+趋势科技（中国）有限公司南京分公司，资深工程师。Android端安全软件研发。</p>
+</li>
+<li>
+<p>2013年2月-2016年5月
+中科院信息工程研究所, 期间在香港数学与理论研究所工作一年。云计算和信息安全助理研究员。</p>
+</li>
+<li>
+<p>2016年5月-2017年9月
+浪潮信息集团郑州云海信息技术有限公司。云计算存储端软件开发工程师。</p>
+</li>
+<li>
+<p>2017年11月-现在
+河南省数据安全与可信计算工程技术研究中心, 郑州师范学院。助教。</p>
+</li>
+</ul>
+<hr>
+<h3 id="指导学生">指导学生</h3>
+<ul>
+<li>贾志娟，王利朋，河南省大学生创新创业训练计划，202012949014，基于区块链的可信学位认证研究，2021.12</li>
+<li>王利朋，郑州师范学院定向招标课题，2019dc005，基于区块链的可信学位认证研究，2021.7</li>
+<li>王利朋，贾志娟，郑州师范学院创新创业训练计划，DCZ2020006，基于区块链的数据安全管理，2021.12</li>
+</ul>
+<hr>
+<h3 id="论文发表">论文发表</h3>
+<ul>
+<li>
+<p><strong>区块链隐私保护技术综述.</strong>
+张家硕, 高健博, 王利朋, et  al.
+保密科学技术, 2020: 26-29.</p>
+</li>
+<li>
+<p><strong>基于中国剩余定理的区块链投票场景签名方案.</strong>
+王利朋, 胡明生, 贾志娟, et  al.
+计算机应用研究,  2020, 37(2): 538-543.</p>
+</li>
+<li>
+<p><strong>基于椭圆曲线的签密方案.</strong>
+崔文军, 贾志娟, 胡明生, et  al.
+计算机应用与软件,  2020, 37(3): 304-309.</p>
+</li>
+<li>
+<p><strong>具有强前向安全性的动态门限签名方案.</strong>
+程亚歌, 胡明生, 公备, et  al.
+计算机工程与应用,  2020, 56(5): 125-134.</p>
+</li>
+<li>
+<p><strong>适用于区块链电子投票场景的门限签名方案.</strong>
+程亚歌, 贾志娟, 胡明生, et  al.
+计算机应用,  2019, 39(9): 2629-2635.</p>
+</li>
+<li>
+<p><strong>A Novel E-payment Protocol Implented by Blockchain and  Quantum Signature.</strong>
+Zhang  J, Hu M, Jia Z, et al.
+International Journal of Theoretical Physics, 2019, 58(1):  1315–1325.</p>
+</li>
+<li>
+<p><strong>A New Signcryption Scheme without Hash or  Redundant functions.</strong>
+Wenjun  C, Mingsheng H, Zhijuan J, et al.
+6th International Conference on Behavioral, Economic and  Socio-Cultural Computing. 2019: 1-4.</p>
+</li>
+<li>
+<p><strong>Identity-Based Threshold Group Signature Scheme of  Blockchain Verification.</strong>
+Lipeng  W, Hu M, Jia Z, et al.
+Chinese Conference on Trusted Computing and  Information Security. 2019: 144-158.</p>
+</li>
+<li>
+<p><strong>Partial Blind Proxy Re-signature Scheme for Mobile  Internet.</strong>
+Lei Y,  Jia Z, Wang L, et al.
+Chinese Conference on Trusted Computing and Information Security.  2019: 16-30.</p>
+</li>
+<li>
+<p><strong>A One-Way Variable Threshold Proxy Re-signature Scheme  for Mobile Internet.</strong>
+Lei Y,  Hu M, Gong B, et al.
+Security and Privacy in New Computing Environments.  2019: 521–537.</p>
+</li>
+<li>
+<p><strong>A Blind Signature Scheme Applying on Electronic  Payment Scene Based on Quantum Secret Sharing.</strong>
+Jialei  Z, Mingsheng H, Bei G, et al.
+Security and Privacy in New  Computing Environments. 2019: 3-14.</p>
+</li>
+<li>
+<p><strong>The Solution Properties for a Four-component Degenerated  Camassa-Holm Equation.</strong>
+Cui W,  Jia Z, Wang L, et al.
+2019 Chinese Control And Decision Conference. 2019:  2042-2047.</p>
+</li>
+<li>
+<p><strong>A New Signcryption Scheme Based on Elliptic Curves.</strong>
+Cui W,  Jia Z, Hu M, et al.
+Security and Privacy in New Computing Environments. 2019: 538–544.</p>
+</li>
+<li>
+<p><strong>Threshold Signature Scheme with Strong Forward  Security Based on Chinese Remainder Theorem.</strong>
+Cheng  Y, Jia Z, Gong B, et al.
+Security and Privacy in New  Computing Environments. 2019: 15-28.</p>
+</li>
+<li>
+<p><strong>A Secure Multi-party Signature Scheme Based on Trust  Mechanism.</strong>
+Cheng  Y, Hu M, Wang L, et al.
+Chinese Conference on Trusted Computing and Information Security.  2019: 119–132.</p>
+</li>
+<li>
+<p><strong>一种轻量级分布式块存储的QoS方法.</strong>
+王利朋, 胡明生, 贾志娟, et  al.
+计算机与数字工程, 2018, 46(12): 2512-2521.</p>
+</li>
+<li>
+<p><strong>A Privacy Protection Scheme in VANETs Based on Group  Signature.</strong>
+Liu X,  Jia Z, Xu E, et al.
+Chinese Conference on Trusted Computing and Information Security.  2018: 286–300.</p>
+</li>
+<li>
+<p><strong>A Voting Scheme in Blockchain Based on  Threshold Group Signature.</strong>
+Lipeng  W, Mingsheng H, Zijuan J, et al.
+Chinese Conference on Trusted Computing and  Information Security. 2018: 184–202.</p>
+</li>
+<li>
+<p><strong>A Signature Scheme Applying on Blockchain  Voting Scene Based on the Asmuth-Bloom Algorithm.</strong>
+Lipeng  W, Mingsheng H, Zhijuan J, et al.
+IEEE 4th International  Conference on Computer and Communications. 2018: 2372-2378.</p>
+</li>
+<li>
+<p><strong>基于虚拟化技术的有效提高系统可用性的方法.</strong>
+李津津, 贾晓启, 杜海超, et  al.
+计算机应用研究,  2017, 37(4): 986-992.</p>
+</li>
+<li>
+<p><strong>Learning Compact Binary Codes for Hash-Based  Fingerprint Indexing.</strong>
+Yi W,  Lipeng W, Yiuming C, et al.
+IEEE Transactions on Information Forensics and  Security, 2015, 10(8): 1603-1616.</p>
+</li>
+<li>
+<p><strong>Fingerprint Geometric Hashing Based on Binary  Minutiae Cylinder Codes.</strong>
+Yi W,  Lipeng W, Yiuming C, et al.
+22nd International Conference on Pattern  Recognition. 2014: 690-695.</p>
+</li>
+<li>
+<p><strong>Implementation of a Soft Morphological Filter Based on GPU  Framework.</strong>
+Wang  L, Hanbin W.
+International Conference on Bioinformatics &amp; Biomedical  Engineering. 2011: 1-4.</p>
+</li>
+<li>
+<p><strong>New evolution algorithm based on the standard particle  swarm optimization.</strong>
+Wang  L, Cheng Y, Liu DC.
+2011 IEEE International Conference on Fuzzy Systems.  2011: 110-114.</p>
+</li>
+<li>
+<p><strong>基于粒子群算法的柔性形态学滤波器.</strong>
+王利朋, 刘东权.
+计算机应用,  2010, 30(10): 2811-2814.</p>
+</li>
+</ul>
+<hr>
+<h3 id="科研项目">科研项目</h3>
+<ul>
+<li><strong>国家自然科学基金青年科学基金项目，</strong>
+指纹方向场高维数据分析方法及其应用研究，
+61403324，26万，2015.1-2017.12，<strong>结题</strong>，<strong>国家级项目</strong>，<strong>参加</strong>。</li>
+<li><strong>河南省科技攻关项目，</strong>
+大数据技术在外贸数据分析与挖掘中的应用，
+162102310238，无经费，2016.1-2018.10，<strong>结题</strong>，<strong>省部级项目</strong>，<strong>参加</strong>。</li>
+<li><strong>河南省教育科学“十三五”规划项目，</strong>
+基于区块链的可信学位认证研究，(2018)-JKGHYB-0279，
+无经费，2018.12-2019.12，<strong>结题</strong>，<strong>厅级项目</strong>，<strong>主持</strong>(<strong>优秀</strong>)。</li>
+<li><strong>河南省高等学校重点科研项目，</strong>
+基于区块链的河南省跨境电商可信溯源机制研究，
+20B520040，2019.8-2021.12，无经费，<strong>在研</strong>，<strong>厅级项目</strong>，<strong>主持</strong>。</li>
+<li><strong>河南省高等学校重点科研项目，</strong>
+适应于工业物联网感知计算层的可信机制研究，
+20A520043，2019.8-2021.12，3万元，<strong>在研</strong>，<strong>厅级项目</strong>，<strong>参与</strong>。</li>
+<li><strong>河南省科技攻关攻关项目，</strong>
+基于区块链的物联网群智感知中可信技术研究，
+202102210359，2020.1.14-2021.12，无经费，<strong>在研</strong>，<strong>省部级项目</strong>，<strong>主持</strong>。</li>
+<li><strong>河南省科技攻关攻关项目，</strong>
+跨层融合物联网异构节点可信认证技术，
+202102310522，2020.1.14-2022.1.14，无经费，<strong>在研</strong>，<strong>省部级项目</strong>，<strong>参与</strong>。</li>
+</ul>
+<hr>
+<h3 id="授权专利">授权专利</h3>
+<ul>
+<li>一种基于重复数据删除技术的数据管理方法及装置；胡永刚，
+<strong>王利朋，第二发明人</strong>，
+授权公告号: CN107391761B，2020.3.6</li>
+<li>数据存储方法、读取方法、删除方法和数据操作系统；
+<strong>王利朋，第一发明人</strong>，
+授权公告号: CN107229420B，2020.5.26</li>
+</ul>
+<hr>
+<h3 id="公示专利">公示专利</h3>
+<ul>
+<li>
+<p><strong>一种分布式存储系统的实现方法及装置；</strong>
+<strong>王利朋</strong>，<strong>第一发明人</strong>，
+申请公布号：106648886A，2016</p>
+</li>
+<li>
+<p><strong>一种分布式存储系统中Qos的实现方法及装置；</strong>
+<strong>王利朋</strong>，<strong>第一发明人</strong>，
+申请公布号: 107276827A，2017</p>
+</li>
+<li>
+<p><strong>一种分布式存储系统实现缓存数据的方法及系统；</strong>
+<strong>王利朋，第一发明人</strong>，
+申请公布号: 107329708A，2017</p>
+</li>
+<li>
+<p><strong>一种带宽流量监管方法及系统；</strong>
+<strong>王利朋，第一发明人</strong>，
+申请公布号: 107465630A，2017</p>
+</li>
+<li>
+<p><strong>一种分布式存储系统数据写入方法及分布式存储系统；</strong>
+冯龙，<strong>王利朋，第二发明人</strong>，
+申请公布号: 107229424A，2017</p>
+</li>
+<li>
+<p><strong>分布式块存储系统带宽流量控制方法、装置、设备及介质；</strong>
+冯龙，<strong>王利朋</strong>，
+申请公布号：108804043A，2018</p>
+</li>
+<li>
+<p><strong>一种数据操作方法及系统；</strong>
+<strong>王利朋，第一发明人</strong>，
+申请公布号: 107220005A，2017</p>
+</li>
+<li>
+<p><strong>分布式存储装置、重删、写、删除、读取方法以及系统；</strong>
+胡永刚，张子奇，<strong>王利朋，第三发明人</strong>，
+申请公布号: 107506150A，2017</p>
+</li>
+<li>
+<p><strong>一种签解密方法、系统、设备及计算机可读存储介质；</strong>
+崔文军，贾志娟，胡明生，<strong>王利朋，第四发明人</strong>，
+申请公布号:109905232A，2019</p>
+</li>
+<li>
+<p><strong>一种智能桌面的控制显示系统；</strong>
+崔驰，<strong>王利朋</strong>，张晓菲，王平，<strong>第二发明人</strong>，
+申请公布号: 109917898A，2019</p>
+</li>
+<li>
+<p><strong>数据发送方法及装置、数据接收方法及装置；</strong>
+崔文军，胡明生，贾志娟，<strong>王利朋</strong>，<strong>第四发明人</strong>，
+申请公布号:110324357A，2019</p>
+</li>
+<li>
+<p><strong>一种签解密方法、系统、设备及计算机可读存储介质；</strong>
+崔文军，胡明生，贾志娟，<strong>王利朋</strong>，张晓菲，<strong>第四发明人</strong>，
+申请公布号:109921896A，2019</p>
+</li>
+<li>
+<p><strong>一种基于区块链的带时效性的签密方法；</strong>
+<strong>王利朋</strong>，胡明生，贾志娟，付俊俊，杨艳艳，程亚歌，<strong>第一发明人</strong>，
+申请公布号: 110719167A，2019</p>
+</li>
+<li>
+<p><strong>一种单向代理重签名的实现方法及装置；</strong>
+雷艳芳，胡明生，贾志娟，<strong>王利朋</strong>，张家蕾，程亚歌，崔文军，付俊俊，<strong>第四发明人</strong>，
+申请公布号:109618348A，2019</p>
+</li>
+<li>
+<p><strong>一种环签名方法、装置、设备及介质;</strong>
+<strong>王利朋</strong>，胡明生，贾志娟，崔文军，雷艳芳，程亚歌，张家蕾, <strong>第一发明人，</strong>
+申请公布号: 109687979A，2019</p>
+</li>
+<li>
+<p><strong>一种基于群签名的车联网隐私保护认证方法;</strong>
+刘新新，胡明生，贾志娟，徐二锋，杨艳艳，<strong>王利朋</strong>，崔文军, <strong>第六发明人，</strong>
+申请公布号: 109831296A，2019</p>
+</li>
+<li>
+<p><strong>一种双向代理重签名的实现方法及装置;</strong>
+雷艳芳，胡明生，贾志娟，<strong>王利朋</strong>，程亚歌，张家蕾，崔文军，付俊俊，<strong>第四发明人</strong>，
+申请公布号: 109861826A，2019</p>
+</li>
+<li>
+<p><strong>一种电子交易方法、装置、交易发起端及介质;</strong>
+张家蕾，胡明生，贾志娟，崔文军，雷艳芳，程亚歌，<strong>王利朋</strong>, <strong>第七发明人</strong>，
+申请公布号:109903028A，2019</p>
+</li>
+<li>
+<p><strong>基于区块链的数字签名方法、装置、设备及存储介质；</strong>
+程亚歌，胡明生，贾志娟，<strong>王利朋</strong>，崔文军，雷艳芳，张家蕾, <strong>第四发明人</strong>，
+申请公布号:109905247A，2019</p>
+</li>
+<li>
+<p><strong>一种电子交易方法、设备、系统及介质；</strong>
+张家蕾，胡明生，贾志娟，<strong>王利朋</strong>，雷艳芳，程亚歌，崔文军, <strong>第四发明人</strong>，
+申请公布号:109934586A，2019</p>
+</li>
+<li>
+<p><strong>一种成员撤销处理方法、装置、设备及存储介质；</strong>
+程亚歌，胡明生，贾志娟，<strong>王利朋</strong>，崔文军，雷艳芳，张家蕾, <strong>第四发明人</strong>，
+申请公布号:109981293A，2019</p>
+</li>
+<li>
+<p><strong>一种基于指纹细结点圆柱码的指纹识别方法；</strong>
+<strong>王利朋</strong>，胡明生，贾志娟，张晓菲，刘新新，杨艳艳, <strong>第一发明人，</strong>
+申请公布号:109993129A，2019</p>
+</li>
+<li>
+<p><strong>一种区块链中基于群签名的投票方法；</strong>
+<strong>王利朋</strong>，胡明生，贾志娟，刘新新，徐二锋，张晓菲，崔文军，<strong>第一发明人，</strong>
+申请公布号: 110009354A，2019</p>
+</li>
+<li>
+<p><strong>一种区块链投票场景中可信节点度量方法；</strong>
+<strong>王利朋</strong>，胡明生，贾志娟，程亚歌，雷艳芳，张家蕾，崔文军，张晓菲, <strong>第一发明人，</strong>
+申请公布号: 110034959A，2019</p>
+</li>
+<li>
+<p><strong>一种消息验证方法、装置、设备及可读存储介质；</strong>
+雷艳芳，贾志娟，胡明生，<strong>王利朋</strong>，程亚歌，张家蕾，崔文军，付俊俊，<strong>第四发明人</strong>，
+申请公布号:109981293A，2019</p>
+</li>
+<li>
+<p><strong>一种D2D分组通信方法、系统及相关组件；</strong>
+张家蕾，胡明生，贾志娟，崔文军，<strong>王利朋</strong>，雷艳芳，程亚歌，<strong>第五发明人，</strong>
+申请公布号: 110312212，2019</p>
+</li>
+<li>
+<p><strong>一种安全多方签名方法、装置、服务器及介质；</strong>
+程亚歌，胡明生，贾志娟，王利朋，雷艳芳，张家蕾，崔文军，<strong>第四发明人，</strong>
+申请公布号: 110380869，2019</p>
+</li>
+<li>
+<p><strong>一种基于区块链可公开校验的门限群签名方法；</strong>
+王利朋，胡明生，贾志娟，付俊俊，崔文军，雷艳芳，程亚歌，张家蕾，<strong>第一发明人，</strong>
+申请公布号: 110401540，2019</p>
+</li>
+<li>
+<p><strong>一种可信电子病历脱敏和回溯方法；</strong>
+王斌，谢琪，周洪伟，张妮楠，林睿凡，王利朋，李洪生，李青山，<strong>第六发明人，</strong>
+申请公布号: 111079178，2019</p>
+</li>
+</ul>
+<hr>
+<h3 id="软件著作权">软件著作权</h3>
+<ul>
+<li>
+<p>胡明生，**王利朋；**Ceph块存储的配额管理系统V1.0，2497700，原始取得，全部权利， 2018.3.14</p>
+</li>
+<li>
+<p>贾志娟，郑桂萍，刘新新，杨艳艳，徐二峰，<strong>王利朋</strong>，崔文军；网络聊天系统V1.0，03036093，原始取得，全部权利，2018.09.20</p>
+</li>
+<li>
+<p><strong>王利朋</strong>，胡明生，程亚歌，张家蕾，崔文军，雷艳芳；基于几何哈希的指纹检索系统V1.0， 03572266，原始取得，全部权利，2018.12.05</p>
+</li>
+<li>
+<p>胡明生，<strong>王利朋</strong>，崔文军，雷艳芳，张家蕾，程亚歌；在线微商城系统V1.0，03340366，原始取得，全部权利，2018.12.14</p>
+</li>
+<li>
+<p>胡明生，<strong>王利朋</strong>，崔文军，雷艳芳，张家蕾，程亚歌；在线店铺实战用户系统V1.0，03346405，原始取得，全部权利，2018.12.18</p>
+</li>
+<li>
+<p>胡明生，<strong>王利朋</strong>，崔文军，雷艳芳，张家蕾，程亚歌；电商课程教学管理系统V1.0，03398347，原始取得，全部权利，2018.12.21</p>
+</li>
+<li>
+<p><strong>王利朋</strong>，付俊俊，周春天，胡明生；基于区块链可公开校验的门限群签名系统V1.0，04311334，原始取得，全部权利，2019.8.6</p>
+</li>
+<li>
+<p><strong>王利朋</strong>，付俊俊，周春天，胡明生；基于区块的可信学位认证系统V1.0，04354882，原始取得，全部权利，2019.8.6</p>
+</li>
+</ul>
+<hr>
+<h3 id="会议交流">会议交流</h3>
+<ul>
+<li>
+<p>“全国行业应用软件暑期学校”，教育部主办，北京中国科学院研究生院，2010.8。</p>
+</li>
+<li>
+<p>“理学博士学生体验交流会”,香港浸会大学理学院，香港浸会大学，2014.7。</p>
+</li>
+<li>
+<p>“第三届密码学与编码理论会议”,国家安全重点实验室主办，青海师范学院，2018.8。</p>
+</li>
+</ul>
 
-#write {
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
-}
-
-@media only screen and (min-width: 1400px) {
-	#write {
-		max-width: 1024px;
-	}
-}
-
-@media only screen and (min-width: 1800px) {
-	#write {
-		max-width: 1200px;
-	}
-}
-
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
-}
-
-a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
-h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
-
-/*@media print {
-    .typora-export h1,
-    .typora-export h2 {
-        border-bottom: none;
-        padding-bottom: initial;
-    }
-
-    .typora-export h1::after,
-    .typora-export h2::after {
-        content: "";
-        display: block;
-        height: 100px;
-        margin-top: -96px;
-        border-top: 1px solid #eee;
-    }
-}*/
-
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-}
-
-li p.first {
-    display: inline-block;
-}
-ul,
-ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
-}
-blockquote blockquote {
-    padding-right: 0;
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #f8f8f8;
-}
-table th {
-    font-weight: bold;
-    border: 1px solid #dfe2e5;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table td {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 6px 13px;
-}
-table th:first-child,
-table td:first-child {
-    margin-top: 0;
-}
-table th:last-child,
-table td:last-child {
-    margin-bottom: 0;
-}
-
-.CodeMirror-lines {
-    padding-left: 4px;
-}
-
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
-
-
-.md-task-list-item > input {
-  margin-left: -1.3em;
-}
-
-@media print {
-    html {
-        font-size: 13px;
-    }
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-    pre {
-        word-wrap: break-word;
-    }
-}
-
-.md-fences {
-	background-color: #f8f8f8;
-}
-#write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
-}
-
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
-}
-
-.md-mathjax-midline {
-    background: #fafafa;
-}
-
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
-}
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
-    border-radius: 3px;
-    padding: 2px 0px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
-}
-
-.md-tag {
-    color: #a7a7a7;
-    opacity: 1;
-}
-
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
-}
-
-.sidebar-tabs {
-    border-bottom: none;
-}
-
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-}
-
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
-}
-
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
-}
-
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
-}
-
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
-    visibility: visible;
-}
-
-.mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
-    background-color: var(--side-bar-bg-color);
-}
-
-.md-lang {
-    color: #b4654d;
-}
-
-/*.html-for-mac {
-    --item-hover-bg-color: #E6F0FE;
-}*/
-
-#md-notification .btn {
-    border: 0;
-}
-
-.dropdown-menu .divider {
-    border-color: #e5e5e5;
-    opacity: 0.4;
-}
-
-.ty-preferences .window-content {
-    background-color: #fafafa;
-}
-
-.ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
-}
-
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
-}
-
-
-
-</style><title>网页测试</title>
-</head>
-<body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='Yanyan网页标题测试'><span>I am 网页标题测试</span></h1><p><span>无意义填充文本</span></p><p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at bibendum lacus. Quisque porta lacus non velit tristique, nec dictum lorem ornare. In posuere accumsan efficitur. Praesent quis ligula non dolor vestibulum posuere. Duis sed lacus at orci posuere laoreet. Curabitur laoreet, ex eget vestibulum suscipit, tellus lacus commodo tellus, non lacinia libero ex at enim. Vivamus quis est sodales, volutpat arcu eget, lobortis nisi. Quisque at dui sed purus tempus accumsan.</span></p><h2 id='二级标题测试'><span>二级标题测试</span></h2><h3 id='加粗斜体测试'><span>加粗斜体测试</span></h3><p><span>Etiam tortor massa, egestas a sem ut, varius placerat ligula. Aenean nec tempor nibh, in bibendum lectus. Nulla a dui nisi. Sed dictum porttitor tortor, quis fringilla neque cursus a. </span><strong><span>Curabitur ut metus accumsan, gravida orci non, viverra leo. </span></strong><span>Mauris sit amet nibh molestie nibh luctus sodales. Nullam congue lorem at semper auctor.</span><strong><span>Nam consectetur diam in nisl dictum, vitae malesuada lacus</span></strong><span> pulvinar. Aenean a pretium metus, nec commodo nisl. Morbi sit amet tempor nisi. Vivamus dapibu</span><em><strong><span>s congue nulla, ac mollis sem bibendum in. Ut nec</span></strong></em><span>dignissim neque. Etiam pretium ultrices condimentum. Morbi ipsum ex, sagittis et enim in, blandit porttitor ex. Donec ornare mauris a ante volutpat fringilla. Etiam elementum ornare leo, et vulputate ipsum eleifend at.</span></p><h3 id='字体变色并加粗测试'><span>字体变色并加粗测试</span></h3><p><font color=Blue><strong><span>Vivamus nec mattis quam. Quisque nec leo ante. Ut ornare interdum metus id viverra. Praesent eu elit quam. Sed malesuada orci eget risus semper finibus. Integer porttitor at leo id rhoncus.</span></strong></font><span>Vivamus nec mattis quam. Quisque nec leo ante. Ut ornare interdum metus id viverra. Praesent eu elit quam. Sed malesuada orci eget risus semper finibus. Integer porttitor at leo id rhoncus. Quisque in cursus sem. Aenean ligula mauris, tincidunt sed dictum vel, lobortis eu orci. Donec at commodo nibh. Ut nulla libero, viverra et tellus ut, scelerisque iaculis velit.</span></p><h3 id='下划线测试'><span>下划线测试</span></h3><p><ins><span>Mauris tincidunt sapien et felis mattis, et efficitur nibh mollis. Suspendisse nec interdum ligula, at gravida erat. Mauris facilisis sed dui sit amet commodo. Suspendisse porttitor enim libero, vitae laoreet est faucibus sit amet. Suspendisse ac rutrum libero, vel vulputate libero. Suspendisse ac nibh eget arcu condimentum luctus. Pellentesque non auctor leo. </span></ins></p><h3 id='下划线加粗测试'><span>下划线加粗测试</span></h3><p><ins><strong><span>Mauris tincidunt sapien et felis mattis, et efficitur nibh mollis. Suspendisse nec interdum ligula, at gravida erat. Mauris facilisis sed dui sit amet commodo. Suspendisse porttitor enim libero, vitae laoreet est faucibus sit amet. Suspendisse ac rutrum libero, vel vulputate libero. Suspendisse ac nibh eget arcu condimentum luctus. Pellentesque non auctor leo.</span></strong><span> </span></ins></p><hr /><h3 id='分割线测试'><span>分割线测试</span></h3><hr /><h3 id='无序列表测试'><span>无序列表测试</span></h3><ul><li><span>Etiam eu fermentum felis. Aliquam erat nulla, pharetra non lacinia et, fermentum nec nulla. Vestibulum mattis sem sit amet justo porta</span></li><li><span>Cras hendrerit semper consectetur. Aliquam condimentum rhoncus lorem, nec hendrerit odio venenatis vel</span></li><li><span>Vestibulum tempus hendrerit nibh, vel hendrerit tellus elementum non. Integer pretium ex mollis diam dapibus, ut aliquet risus lobortis.</span></li><li><strong><span>Sed ullamcorper, elit vitae malesuada mattis, lacus felis rutrum nulla, vel tempor libero magna eu sem. </span></strong></li><li><em><strong><span>Praesent accumsan est nisi. Duis sit amet lorem sit amet felis porta blandit.</span></strong></em></li><li><font color=Blue><strong><span>Fusce sagittis mauris nisl, non fringilla quam aliquam a. Integer at sagittis lorem. Maecenas sit amet sodales orci. Proin iaculis turpis et urna tristique, a tristique est auctor.</span></strong></font></li></ul><p>&nbsp;</p></div></div>
-</body>
-</html>
+        
+        
+    </body>
+    </html>
